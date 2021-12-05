@@ -1,7 +1,19 @@
 <?php
-  	class addUsers extends Controller{
-		public function __construct(){
-			parent::__construct();
+    require "connectdb.php";
+
+    
+    class User
+    {
+        function User($Use_ID, $Use_Name, $Use_Email, $Use_Img, $Use_Isdark, $Use_Isenglish)
+        {
+            $this->id = $Use_ID;
+            $this->name = $Use_Name;
+            $this->email = $Use_Email;
+            $this->img = $Use_Img;
+            $this->isDark = $Use_Isdark;
+            $this->isEnglish = $Use_Isenglish;
+        }
+    }
 
     $User = array();
     if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['img']) && isset($_POST['isDark']) && isset($_POST['isEnglish']))
